@@ -1,4 +1,4 @@
-class GFA:
+class Graph:
     def __init__(self, gfafile):
         self.gfafile = gfafile
         self.nodes = []
@@ -10,3 +10,6 @@ class GFA:
     
     def calculate_complexity(self):
         return self.edge_size
+
+    def parse_gfafile(self):
+        pass

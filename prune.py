@@ -1,4 +1,4 @@
-from gfa import GFA
+from graph import Graph
 
 
 def prune_main(args):
@@ -6,7 +6,7 @@ def prune_main(args):
     print(res)
 
 
-class Prune(GFA):
+class Prune(Graph):
     def __init__(self, gfafile, kmer_len, edge_max):
         super().__init__(gfafile)
         self.kmer_len = kmer_len
@@ -19,4 +19,3 @@ class Prune(GFA):
         print(self.gfafile, self.kmer_len, self.edge_max)
         print('Hello, World!')
         return 1
-
