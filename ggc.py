@@ -2,6 +2,7 @@
 # coding: utf-8
 
 import argparse
+import prune
 
 def main():
     parser = argparse.ArgumentParser()
@@ -26,7 +27,7 @@ def main():
 
 
 def command_prune(args):
-    print(args)
+    prune.prune_main(args)
 
 
 if __name__ == "__main__":
