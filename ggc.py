@@ -4,13 +4,14 @@
 import argparse
 import prune
 
+
 def main():
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers()
 
     # vg prune
     parser_prune = subparsers.add_parser(
-        'prune', help='calculate vg prune metrics')
+        'prune', help='calculate a metric that vg prune uses')
     parser_prune.add_argument('-k', '--kmer-length', default=24,
                             type=int, help='kmer length used for pruning (24)')
     parser_prune.add_argument('-e', '--edge-max', default=3, type=int,
