@@ -20,17 +20,17 @@ class Graph:
                 elif itemlist[0] == 'S':
                     self.nodes.append(Node(itemlist[1], itemlist[2]))
                 elif itemlist[0] == 'L':
-                    self.edges.append(
-                        Edge(
-                            itemlist[1],
-                            itemlist[3],
-                            True if itemlist[2] == '-' else False,
-                            True if itemlist[4] == '-' else False,
-                            int(itemlist[5].split('M')[0])  # TODO: parse CIGAR
-                        )
-                    )
+                    from_id = int(itemlist[1])
+                    to_id = int(itemlist[3])
+                    from_start = True if itemlist[2] == '-' else False
+                    to_end = True if itemlist[4] == '-' else False,
+                    # TODO: parse CIGAR at overlap
+                    overlap = int(itemlist[5].split('M')[0])
+                    self.edges.append(Edge(from_id, to_id, from_start, to_end, overlap))
                 elif itemlist[0] == 'P':
-                    pass
+                    self.paths.append(
+                        Path(itemlist[1], itemlist[2], itemlist[3])
+                    )
 
 
 class Node:
